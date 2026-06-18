@@ -8,14 +8,15 @@ Description:
   in your online spreed sheet. (e.g =NGXPRICE("DANGCEM") returns Dangote cement current stock price).
   Where the ticker is wrong or doesn't exist, it returns a "ticker not found" error message.
 
-  The GET_ALL_TICKERS() function returns the current list of NGX stocks alongside their company names.
+  The GET_ALL_TICKERS() function returns the current list of NGX stock tickers alongside their company names.
 
   Replace the apiKey value in this script with your personal apikey generated from ngxpulse.ng.
  */
 
-const apiKey = "enter your api key within this quotes"; 
 
 function NGXPRICE(ticker) { 
+  const apiKey = "enter your api key within this quotes"; 
+
   const url = "https://www.ngxpulse.ng/api/ngxdata/stocks";
   
   const options = {
@@ -65,6 +66,8 @@ function NGXPRICE(ticker) {
 
 
 function GET_ALL_TICKERS() {
+  const apiKey = "enter your api key within this quotes"; 
+  
   const url = "https://www.ngxpulse.ng/api/ngxdata/stocks";
   
   const options = {
