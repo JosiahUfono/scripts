@@ -10,7 +10,7 @@ Description:
 
   The GET_ALL_TICKERS() function returns the current list of NGX stock tickers alongside their company names.
 
-  Replace the apiKey value in this script with your personal apikey generated from ngxpulse.ng.
+  Replace the apiKey value in this script with your personal API key generated from ngxpulse.ng.
  */
 
 function NGXPRICE(ticker) {
@@ -32,7 +32,7 @@ const url = "https://www.ngxpulse.ng/api/ngxdata/stocks";
     const responseCode = response.getResponseCode();
     const responseText = response.getContentText();
     
-    // Check for HTTP errors (e.g., 401 Unauthorized, 404 Not Found)
+    // Check for HTTP errors
     if (responseCode !== 200) {
       return "API Error (" + responseCode + "): " + responseText.substring(0, 40);
     }
