@@ -13,12 +13,12 @@ Description:
   Replace the apiKey value in this script with your personal apikey generated from ngxpulse.ng.
  */
 
+function NGXPRICE(ticker) {
 
-function NGXPRICE(ticker) { 
-  const apiKey = "enter your api key within this quotes"; 
-
-  const url = "https://www.ngxpulse.ng/api/ngxdata/stocks";
+  // Replace this with your actual NGXpulse API key
+const apiKey = "enter your api key within this quotes";
   
+const url = "https://www.ngxpulse.ng/api/ngxdata/stocks";
   const options = {
     "method": "GET",
     "headers": {
@@ -32,7 +32,7 @@ function NGXPRICE(ticker) {
     const responseCode = response.getResponseCode();
     const responseText = response.getContentText();
     
-    // Check for HTTP errors
+    // Check for HTTP errors (e.g., 401 Unauthorized, 404 Not Found)
     if (responseCode !== 200) {
       return "API Error (" + responseCode + "): " + responseText.substring(0, 40);
     }
@@ -66,8 +66,8 @@ function NGXPRICE(ticker) {
 
 
 function GET_ALL_TICKERS() {
-  const apiKey = "enter your api key within this quotes"; 
-  
+  const apiKey = "enter your api key within this quotes"; // Don't forget to add your API key here too!
+ 
   const url = "https://www.ngxpulse.ng/api/ngxdata/stocks";
   
   const options = {
